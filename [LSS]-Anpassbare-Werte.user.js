@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         [LSS] Fahrzeug-Umrüst-Manager
+// @name         [LSS] Fahrzeug-Umrüstungs-Manager
 // @namespace    http://tampermonkey.net/
 // @version      1.0
 // @description  Vereinfacht das Anpassen bei Löschfahrzeugen
@@ -56,7 +56,7 @@
 
         const li = document.createElement('li');
         li.setAttribute('role','presentation');
-        li.innerHTML = `<a href="#" id="open-refit-helper"><span class="glyphicon glyphicon-wrench"></span>&nbsp;&nbsp; Fahrzeug-Umrüst-Manager</a>`;
+        li.innerHTML = `<a href="#" id="open-refit-helper"><span class="glyphicon glyphicon-wrench"></span>&nbsp;&nbsp; Fahrzeug-Umrüstungs-Manager</a>`;
         const divider = profileMenu.querySelector('li.divider');
         if (divider) profileMenu.insertBefore(li, divider);
         else profileMenu.appendChild(li);
@@ -92,7 +92,7 @@
         lightbox.innerHTML = `
             <div class="content">
                 <button id="close-refit" style="float:right; background-color:red; color:white;">Schließen</button>
-                <h2>Fahrzeug-Umrüst-Manager</h2>
+                <h2>Fahrzeug-Umrüstungs-Manager</h2>
                 <div>
                     <input id="refit-search" class="search-input" placeholder="🔍 Suche Fahrzeug oder Typen">
                     <button id="refresh-refits" style="background-color:green; color:white;" class="refit-btn">Aktualisieren</button>
