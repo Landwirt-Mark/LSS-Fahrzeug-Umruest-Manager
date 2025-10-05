@@ -14,7 +14,7 @@
     // Konfiguration: der Fahrzeuge
     const manualRefits = {
         90: { name: "HLF 10", water:{min:0, max:3000, init:1200}, pump:{min:500, max:4000, init:1000}, persons:{min:1, max:9, init:9}, foam:{min:0, max:400, init:150} },
-        30: { name: "HLF 20", water:{min:0, max:3000, init:1600}, pump:{min:500, max:4000, init:2000}, persons:{min:1, max:9, init:9}, foam:{min:0, max:1000, init:150} },
+        30: { name: "HLF 20", water:{min:0, max:4500, init:1600}, pump:{min:500, max:4000, init:2000}, persons:{min:1, max:9, init:9}, foam:{min:0, max:1000, init:150} },
         1: { name: "LF 10", water:{min:0, max:3000, init:1200}, pump:{min:500, max:4000, init:1000}, persons:{min:1, max:9, init:9}, foam:{min:0, max:400, init:150} },
         0: { name: "LF 20", water:{min:0, max:3000, init:2000}, pump:{min:500, max:4000, init:2000}, persons:{min:1, max:9, init:9}, foam:{min:0, max:1000, init:150} },
         37: { name: "TSF-W", water:{min:0, max:3000, init:500}, pump:{min:500, max:4000, init:1000}, persons:{min:1, max:9, init:6}, foam:{min:0, max:400, init:150} },
@@ -684,3 +684,4 @@ document.addEventListener('click',e=>{
 });
 
 })();
+
