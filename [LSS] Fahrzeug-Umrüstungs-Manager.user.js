@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         [LSS] Fahrzeug-Umrüstungs-Manager
 // @namespace    http://tampermonkey.net/
-// @version      1.0
+// @version      1.0.1
 // @description  Vereinfacht das Anpassen bei Löschfahrzeugen
 // @author       Paul
 // @match        https://www.leitstellenspiel.de/*
@@ -684,4 +684,5 @@ document.addEventListener('click',e=>{
 });
 
 })();
+
 
