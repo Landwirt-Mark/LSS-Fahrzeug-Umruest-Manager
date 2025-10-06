@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         [LSS] Fahrzeug-Umrüstungs-Manager
 // @namespace    http://tampermonkey.net/
-// @version      1.0.1
+// @version      1.0.2
 // @description  Vereinfacht das Anpassen bei Löschfahrzeugen
 // @author       Paul
 // @match        https://www.leitstellenspiel.de/*
@@ -105,10 +105,9 @@
                <label>Pumpe:</label><input type="number" id="bulk-pump" class="refit-input" value="0">
                <label>Pers.:</label><input type="number" id="bulk-pers" class="refit-input" value="0">
                <label>Schaum:</label><input type="number" id="bulk-foam" class="refit-input" value="0"><br>
-               <button id="bulk-type-credits" style="background-color:green; color:white;" class="refit-btn refit-credit">Alle dieses Typs umbauen (Credits)</button>
-               <button id="bulk-type-coins" style="background-color:red; color:white;" class="refit-btn refit-coins">Alle dieses Typs umbauen & überspringen</button>
+
                <button id="bulk-selected-credits" style="background-color:green; color:white;" class="refit-btn refit-credit">Ausgewählte umbauen (Credits)</button>
-               <button id="bulk-selected-coins" style="background-color:red; color:white;" class="refit-btn refit-skip">Ausgewählte umbauen & überspringen</button>
+
                </div>
 
                <div id="refit-list">Fahrzeuge werden geladen!</div>
@@ -122,9 +121,12 @@
         document.getElementById('refresh-refits').addEventListener('click', () => fetchVehiclesAndRender());
         document.getElementById('refit-search').addEventListener('input', (e) => filterTable(e.target.value));
     }
+    //108  <button id="bulk-type-credits" style="background-color:green; color:white;" class="refit-btn refit-credit">Alle dieses Typs umbauen (Credits)</button>
+    //109  <button id="bulk-type-coins" style="background-color:red; color:white;" class="refit-btn refit-coins">Alle dieses Typs umbauen & überspringen</button>
+    //110  <button id="bulk-selected-coins" style="background-color:red; color:white;" class="refit-btn refit-skip">Ausgewählte umbauen & überspringen</button>
 
 
-    // Open Lightbox 
+    // Open Lightbox
 
     function openLightbox() {
         createLightboxIfNeeded();
@@ -419,7 +421,7 @@ tr.appendChild(cellFoam);
             });
             cellAction.appendChild(btnCredits);
 
-            const btnCoins = document.createElement('button');
+        /*  const btnCoins = document.createElement('button');
             btnCoins.className = 'refit-btn refit-coins';
             btnCoins.textContent = 'Umbau & Überspringen (6 Coins)';
             btnCoins.addEventListener('click', async () => {
@@ -432,7 +434,7 @@ tr.appendChild(cellFoam);
                 }
             });
             cellAction.appendChild(document.createElement('br'));
-            cellAction.appendChild(btnCoins);
+            cellAction.appendChild(btnCoins);*/
 
             tr.appendChild(cellAction);
             tbody.appendChild(tr);
@@ -501,7 +503,7 @@ tr.appendChild(cellFoam);
     const placeholderName = "\u200B\u200C\u200D";
     const body =
           `vehicle_fitting_template[template_caption]=${encodeURIComponent(placeholderName)}&` +
-          `vehicle_fitting_template[id]=&` + 
+          `vehicle_fitting_template[id]=&` +
           `persons=${encodeURIComponent(values.persons)}&` +
           `water=${encodeURIComponent(values.water)}&` +
           `pump=${encodeURIComponent(values.pump)}&` +
